@@ -1,5 +1,6 @@
 const header = document.querySelector('header')
 const Bar = document.querySelector('.nav-bar')
+var QUANTITé=0;
 
 window.addEventListener('scroll', function () {
   header.classList.toggle('sticky', window.scrollY > 0)
@@ -790,7 +791,6 @@ let closeCart = document.querySelector('#close-cart')
 cartIcon.onclick = () => {
   cart.classList.add('Active')
   quantityChanged()
-
 }
 // close cart
 closeCart.onclick = () => {
@@ -801,6 +801,8 @@ closeCart.onclick = () => {
 if (document.readyState == 'loading') {
   document.addEventListener('DOMContentLoaded', ready)
 } else ready()
+
+
 
 function ready() {
   var removCartButtons = document.getElementsByClassName('cart-remove')
@@ -819,7 +821,7 @@ function ready() {
   var addCArt = document.getElementsByClassName('add-cart')
   console.log(addCArt)
   for (var i = 0; i < addCArt.length; i++) {
-    alert('hhh')
+    // alert('hhh')
     var button = addCArt[i]
     button.addEventListener('click', addCartClicked)
   }
@@ -828,6 +830,10 @@ function ready() {
 function removCartItem(event) {
   var buttonClicked = event.target
   buttonClicked.parentElement.remove()
+  QUANTITé--;
+  uptadeTotale()
+  // alert(QUANTITé)
+  document.getElementsByClassName('QUantitéCart')[0].innerHTML = QUANTITé;
   uptadeTotale()
 }
 function quantityChanged(event) {
@@ -836,11 +842,12 @@ function quantityChanged(event) {
   uptadeTotale()
 }
 function addCartClicked(event) {
-  alert('gg')
+  // alert('gg')
 
   var button = event.target
   var shopProducts = button.parentElement
   var title = shopProducts.getElementById('produitName')
+  uptadeTotale()
   console.log(title.value)
 }
 
@@ -854,24 +861,34 @@ function addCartClicked(event) {
 
 // }
 
-var addToCart = function (title, img, price) {
-
+var addToCart = function (title, img, price, id) {
   var cartShopBox = document.createElement('div')
   cartShopBox.classList.add('cart-box')
   var cartItems = document.getElementsByClassName('cart-content')[0]
-  // var cartItem
+  var cartItemsId = cartItems.getElementsByClassName('cart-img')
+  // var test = cartItemsId
+  // // console.log(cartItemsId)
+  // // alert(parseInt(test))
+
+  // for (var i = 0; i < cartItemsId.length; i++) {
+  //   alert(" ------- Vous aver deja choisie ce plat ! ------- \n vous pouver ajouter la quantiter dans votre cart");
+  //   return;
+  // }
+
   var cartMaker = `
     <img src="${img}" alt="hh" class="cart-img">
     <div class="detail-box">
     <div class="cart-product-title">${title}</div>
     <div class="cart-price">${parseFloat(price)} DH</div>
+    <input type="hidden" class="idPlat" value="${id}">
     <input type="number" value="1" class="cart-contity">
     </div>
     <!-- remove cart -->
     <i class="bx bxs-trash-alt cart-remove">re</i>
     `
-  // alert("tt")
 
+  // alert("tt")
+  uptadeTotale()
   cartShopBox.innerHTML = cartMaker
   cartItems.append(cartShopBox)
 
@@ -881,7 +898,11 @@ var addToCart = function (title, img, price) {
 
   cartShopBox
     .getElementsByClassName('cart-contity')[0]
-    .addEventListener('', quantityChanged)
+    .addEventListener('change', quantityChanged)
+  QUANTITé++;
+  uptadeTotale()
+  // alert(QUANTITé)
+  document.getElementsByClassName('QUantitéCart')[0].innerHTML = QUANTITé;
 }
 
 //     const cart = document.getElementById('adder')
@@ -932,7 +953,9 @@ function uptadeTotale() {
   let cartContent = document.getElementsByClassName('cart-content')[0]
   let cartBoxes = cartContent.getElementsByClassName('cart-box')
   let total = 0
+
   console.log(cartBoxes)
+
   for (let i = 0; i < cartBoxes.length; i++) {
     let cartBox = cartBoxes[i]
     let priceElement = cartBox.getElementsByClassName('cart-price')[0]
@@ -941,8 +964,19 @@ function uptadeTotale() {
     let quantity = quantityElement.value
     total += price * quantity
     total = Math.round(total * 100) / 100
-    // alert(total)
+
+    //alert(total);
+    //true;
+    //true;
+    //true;
+    //true;
+    //true;
+    //true;
+    //true;
+    //true;
+    //true;
 
     document.getElementsByClassName('totale-price')[0].innerText = total + ' DH'
+
   }
 }

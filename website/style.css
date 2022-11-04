@@ -37,7 +37,6 @@ header.sticky {
   background: #fefef7;
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);
   transition: all 0.38s ease;
-
 }
 
 .logo {
@@ -85,7 +84,6 @@ header.sticky {
   justify-items: center;
 }
 
-
 .nav-bar a:hover {
   border-bottom: 2px solid #ff3d00;
   text-decoration: none;
@@ -113,17 +111,41 @@ header.sticky {
 }
 
 #shoP {
+  position: relative;
   color: #ff3d00;
   cursor: pointer;
 }
+.QUantitéCart {
+  position: absolute;
+  right: 12px;
+  top: 17px;
+  height: 12px;
+  width: 12px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  font-size: 9px;
+  color: #f2f2ed;
+  background-color: #ff3d00;
+  border-radius: 50%;
+  /* padding: 2px; */
+}
+.QUantitéCart p {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  top: 15px;
+  padding: 5px;
 
+}
 .cart {
   position: fixed;
   top: 0;
   right: -100%;
   width: 50%;
   /* min-width: 100vh; */
-  min-height: 110vh;
+  min-height: 100vh;
   padding: 40px 40px;
   /* display: flex; */
   background: #f2f2ed;
@@ -131,15 +153,17 @@ header.sticky {
   flex-direction: column;
   box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
   z-index: 1000;
+  /* padding-bottom: 40px; */
   transition: all 0.38s ease;
 }
-.cart-title{
+.cart-title {
   text-align: center;
   font-size: 1.5rem;
   font-weight: 400;
   margin-bottom: 50px;
 }
-.cart-box{
+
+.cart-box {
   display: grid;
   grid-template-columns: 32% 50% 18%;
   align-items: center;
@@ -147,50 +171,54 @@ header.sticky {
   gap: 3rem;
 }
 
-.cart-img{
+.cart-img {
   width: 100px;
   height: 100px;
   object-fit: contain;
   padding: 10px;
 }
 
-.detail-box{
+.detail-box {
   display: grid;
   row-gap: 0.5rem;
   margin-right: 5px;
 }
-.cart-product-title{
+.cart-product-title {
   font-size: 1rem;
   text-transform: uppercase;
 }
-.cart-price{
+.cart-content {
+  max-height: 50%;
+  overflow: hidden;
+}
+.cart-price {
   font-weight: 500;
 }
-.cart-contity{
+.cart-contity {
   border: 1px solid red;
   width: 2.4rem;
   text-align: center;
   font-size: 1rem;
 }
-.cart-remove{
+.cart-remove {
   font: 24px;
   color: #ff3d00;
   cursor: pointer;
 }
-.total{
+.total {
   display: flex;
   justify-content: flex-end;
   margin-top: 1.5rem;
   border-top: 1px solid black;
 }
-.totale-title{
+.totale-title {
   font-size: 1rem;
   font-size: 600;
 }
-.totale-price{
+.totale-price {
   margin-left: 2rem;
 }
-.btn-buy{
+.btn-buy {
   display: flex;
   margin: 1.5rem auto 0 auto;
   padding: 10px 20px;
@@ -204,15 +232,17 @@ header.sticky {
   cursor: pointer;
   border: none;
   border-radius: 50px;
+  margin-bottom: 50px;
 }
-.cart.Active{
+.cart.Active {
   right: 0;
   transition: all 0.38s ease;
 }
-#close-cart{
+
+#close-cart {
   color: #ff3d00;
   position: absolute;
-  top:1rem;
+  top: 1rem;
   right: 0.8rem;
   font-size: 2rem;
   cursor: pointer;
@@ -327,7 +357,6 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(300px, auto));
   gap: 3rem;
   justify-items: center;
-  
 }
 
 .mainimag img {
@@ -512,7 +541,6 @@ section {
   cursor: pointer;
 }
 
-
 .roW img {
   width: 100%;
   height: auto;
@@ -583,7 +611,6 @@ section {
 .main {
   width: 100%;
   height: 350px;
-  ;
   padding: 90px 0 0;
   /* margin-top: 16vh; */
 }
@@ -679,7 +706,7 @@ section {
   justify-content: center;
 }
 
-.submitbtn input[type="submit"]{
+.submitbtn input[type="submit"] {
   color: white;
   display: flex;
   justify-content: center;
@@ -692,7 +719,8 @@ section {
   height: 5%;
 }
 
-.submitbtn input[type="submit"]:hover,.btn-buy:hover {
+.submitbtn input[type="submit"]:hover,
+.btn-buy:hover {
   color: #151d53;
   letter-spacing: 1px;
   background-color: transparent;
@@ -860,34 +888,31 @@ section {
   
 } */
 
-
-@media (max-width:1690px) {
+@media (max-width: 1690px) {
   section {
     /* padding: 70px 10%; */
-    transition: .2s;
+    transition: 0.2s;
     /* padding: 90px 14% 80px; */
-
   }
 
   header {
     padding: 11px 2%;
-    transition: .2s;
+    transition: 0.2s;
   }
 
   .mainFooter {
     /* padding: 70px 2%; */
-    transition: .2s;
+    transition: 0.2s;
   }
 
   header.sticky {
     /* padding: 8px 2%; */
     padding: 1px 5%;
-    transition: .2s;
+    transition: 0.2s;
   }
 }
 
-@media (max-width:709px) {
-
+@media (max-width: 709px) {
   /* nav-bar */
   #menU {
     display: block;
@@ -923,11 +948,6 @@ section {
     right: 0;
   }
 
-
-
-
-
-
   /* contact */
 
   .line {
@@ -937,7 +957,4 @@ section {
   .input-box {
     width: 100%;
   }
-
-
-
 }
