@@ -1,6 +1,6 @@
 const header = document.querySelector('header')
 const Bar = document.querySelector('.nav-bar')
-var QUANTITé=0;
+var QUANTITé = 0;
 
 window.addEventListener('scroll', function () {
   header.classList.toggle('sticky', window.scrollY > 0)
@@ -836,6 +836,7 @@ function removCartItem(event) {
   document.getElementsByClassName('QUantitéCart')[0].innerHTML = QUANTITé;
   uptadeTotale()
 }
+
 function quantityChanged(event) {
   var input = event.target
   if (isNaN(input.value) || input.value <= 0) input.value = 1
@@ -846,34 +847,29 @@ function addCartClicked(event) {
 
   var button = event.target
   var shopProducts = button.parentElement
-  var title = shopProducts.getElementById('produitName')
+  // var title = shopProducts.getElementById('produitName')
   uptadeTotale()
-  console.log(title.value)
+  // console.log(title.value)
 }
-
-// var sum=0,text=[];
-// sum+=price;
-// var i=0;
-// var plat={
-//     name:"hhh",
-//     img:"img/POKES/2.jpg",
-//     price:8
-
-// }
 
 var addToCart = function (title, img, price, id) {
   var cartShopBox = document.createElement('div')
   cartShopBox.classList.add('cart-box')
-  var cartItems = document.getElementsByClassName('cart-content')[0]
-  var cartItemsId = cartItems.getElementsByClassName('cart-img')
-  // var test = cartItemsId
-  // // console.log(cartItemsId)
-  // // alert(parseInt(test))
 
-  // for (var i = 0; i < cartItemsId.length; i++) {
-  //   alert(" ------- Vous aver deja choisie ce plat ! ------- \n vous pouver ajouter la quantiter dans votre cart");
-  //   return;
-  // }
+  var cartItems = document.getElementsByClassName('cart-content')[0]
+  var cartBox = cartItems.getElementsByClassName('cart-box')
+  console.log(cartBox)
+  
+  for (var i = 0; i < cartBox.length; i++) {
+    var cartItemsId = cartBox[i].getElementsByClassName('idPlat')[0].value
+    // alert("te")
+    console.log(id)
+    console.log(cartItemsId)
+    if ( id == cartItemsId ) {
+      alert(" ------- Vous aver deja choisie ce plat ! ------- \n vous pouver ajouter la quantiter dans votre cart")
+      return;
+    }
+  }
 
   var cartMaker = `
     <img src="${img}" alt="hh" class="cart-img">
@@ -903,6 +899,8 @@ var addToCart = function (title, img, price, id) {
   uptadeTotale()
   // alert(QUANTITé)
   document.getElementsByClassName('QUantitéCart')[0].innerHTML = QUANTITé;
+  uptadeTotale()
+
 }
 
 //     const cart = document.getElementById('adder')
@@ -975,6 +973,7 @@ function uptadeTotale() {
     //true;
     //true;
     //true;
+    // T.lenght = 0 !
 
     document.getElementsByClassName('totale-price')[0].innerText = total + ' DH'
 

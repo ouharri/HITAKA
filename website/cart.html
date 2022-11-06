@@ -115,12 +115,7 @@
                 </div>
             </div>
             <h2>TOUS LES INGRÉDIENTS COMPOSANTS LE MENU SONT NATURELS</h2>
-            <div id="test">
-                kk
-            </div>
-            <div id="spinner">
-                ...................
-            </div>
+            <div class="lds-dual-ring"></div>
         </div>
         <div class="tbsil">
             <img src="img/pexels-polina-tankilevitch-8601565-Recovered.png" alt="tbsil hh">
@@ -370,7 +365,7 @@
           <a href=""><i class='bx bxs-star'></i></a>
           <a href=""><i class='bx bxs-star'></i></a>
       </div>
-      <div class="addPlat" onclick="addToCart(${"'" + Title + "','" + Img + "'," + Price + ",'" + Id + "'"})">
+      <div class="addPlat" onclick="addToCart(${"'" + Title + "','" + Img + "'," + Price + "," + Id})">
           <i class='bx bx-plus-circle bx-sm add-cart'></i>
       </div>
    </div>
@@ -885,6 +880,8 @@
 
         handlChange = (e) => {
             // location.reload();
+            const filter = document.getElementById('filter').value;
+
             switch (filter) {
                 case "ALL":
 
@@ -1023,19 +1020,6 @@
 
                     list.innerHTML += platType("Nos Desert", "chbe3ti ? , 5oud leek chi deset !")
                     for (let i = 0; i < DesertPlat.length; i++) plat.innerHTML += Content(DesertPlat[i]);
-
-                    break;
-
-                case "all":
-                    while (list.hasChildNodes()) {
-                        list.removeChild(list.firstChild);
-                    }
-                    while (plat.hasChildNodes()) {
-                        plat.removeChild(plat.firstChild);
-                    }
-
-                    list.innerHTML += platType("Nos soupes", "a7san 7rera fl3alam kayna 4er 3ndna ATAKLa")
-                    for (let i = 0; i < soupPlat.length; i++) plat.innerHTML += Content(soupPlat[i]);
 
                     break;
 

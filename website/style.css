@@ -129,21 +129,20 @@ header.sticky {
   color: #f2f2ed;
   background-color: #ff3d00;
   border-radius: 50%;
-  /* padding: 2px; */
+  padding: 2px !important; 
 }
+
 .QUantitéCart p {
   text-align: center;
   justify-content: center;
   align-items: center;
   top: 15px;
-  padding: 5px;
-
 }
 .cart {
   position: fixed;
   top: 0;
   right: -100%;
-  width: 50%;
+  width: 100%;
   /* min-width: 100vh; */
   min-height: 100vh;
   padding: 40px 40px;
@@ -165,10 +164,10 @@ header.sticky {
 
 .cart-box {
   display: grid;
-  grid-template-columns: 32% 50% 18%;
+  grid-template-columns: 32% 45% 10%;
   align-items: center;
   margin-top: 1rem;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .cart-img {
@@ -188,8 +187,10 @@ header.sticky {
   text-transform: uppercase;
 }
 .cart-content {
-  max-height: 50%;
-  overflow: hidden;
+  max-height: 60vh;
+  width: 100%;
+  overflow:auto;
+  /* overflow-y: auto; */
 }
 .cart-price {
   font-weight: 500;
@@ -606,6 +607,32 @@ section {
 .foteerPlat .addPlat:hover {
   color: green;
 }
+/* spinner css  */
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #ff3d00;
+  border-color: #ff3d00 transparent #ff3d00 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 
 /* contact part */
 .main {
