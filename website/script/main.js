@@ -110,8 +110,8 @@ function removCartItem(event) {
   buttonClicked.parentElement.remove()
   QUANTITé--;
   uptadeTotale()
-  // alert(QUANTITé)
   document.getElementsByClassName('QUantitéCart')[0].innerHTML = QUANTITé;
+  // alert(QUANTITé)
   // uptadeTotale()
 }
 
@@ -138,6 +138,7 @@ function addToCart(Title, Img, Price, Id) {
     price: Price,
     id: Id
   }
+
   cartStorage.push(platStorage)
   localStorage.setItem('cartTStorage', JSON.stringify(cartStorage))
 
@@ -162,7 +163,7 @@ function addToCart(Title, Img, Price, Id) {
   var cartMaker = `
     <img src="../${Img}" alt="hh" class="cart-img">
     <div class="detail-box">
-    <div class="cart-product-title">$Ttitle}</div>
+    <div class="cart-product-title">${Title}</div>
     <div class="cart-price">${parseFloat(Price)} DH</div>
     <input type="hidden" class="idPlat" value="${Id}">
     <input type="number" value="1" class="cart-contity">
@@ -243,7 +244,7 @@ function uptadeTotale() {
 
   // let total = Number(localStorage.getItem('total'))
   // if (!total) 
-  let total = 0
+  var total = 0;
   // alert(total)
 
   // console.log(cartBoxes)
@@ -270,13 +271,14 @@ function uptadeTotale() {
     //true;
     // T.lenght = 0 !
 
-    document.getElementsByClassName('totale-price')[0].innerText = total + ' DH'
-
+    
   }
+  document.getElementsByClassName('totale-price')[0].innerText = total + ' DH'
   // alert(total)
 }
+
+
 document.querySelector('.btn-buy').onclick = function(){
   localStorage.clear();
   location.reload();
-
 }
