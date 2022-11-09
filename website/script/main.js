@@ -19,7 +19,44 @@ menu.onclick = () => {
 var QUANTITé = Number(localStorage.getItem('quantité'))
 if (!QUANTITé) QUANTITé = 0
 document.getElementsByClassName('QUantitéCart')[0].innerHTML = QUANTITé;
-var cartTmp = [] ;
+
+const cartTmp = JSON.parse(localStorage.getItem('cartTStorage'))
+
+if (cartTmp) {
+
+  var cartStorage = cartTmp
+
+  for (let i = 0; i < cartStorage.length; i++) {
+    // console.log(cartStorage[i])
+
+    var cartShopBox = document.createElement('div')
+    cartShopBox.classList.add('cart-box')
+
+    var cartItems = document.getElementsByClassName('cart-content')[0]
+    var cartBox = cartItems.getElementsByClassName('cart-box')
+    // console.log(cartBox)
+    var cartMaker = `
+    <img src="../${cartStorage[i].img}" alt="hh" class="cart-img">
+    <div class="detail-box">
+    <div class="cart-product-title">${cartStorage[i].title}</div>
+    <div class="cart-price">${parseFloat(cartStorage[i].price)} DH</div>
+    <input type="hidden" class="idPlat" value="${cartStorage[i].id}">
+    <input type="number" value="1" class="cart-contity">
+    </div>
+    <!-- remove cart -->
+    <i class="bx bxs-trash-alt cart-remove"></i>
+    `
+
+    cartShopBox.innerHTML = cartMaker
+    cartItems.append(cartShopBox)
+
+    // addToCart(cartStorage[i].title,cartStorage[i].img,cartStorage[i].price,cartStorage[i].id)
+  }
+  uptadeTotale()
+} else var cartStorage = []
+
+
+
 
 // var CartTmp = localStorage.getItem('cartBox')?.toString()
 // console.log(JSON.parse(CartTmp))
@@ -93,7 +130,17 @@ function quantityChanged(event) {
 //   // console.log(title.value)
 // }
 
-var addToCart = function (title, img, price, id) {
+function addToCart(Title, Img, Price, Id) {
+
+  let platStorage = {
+    title: Title,
+    img: Img,
+    price: Price,
+    id: Id
+  }
+  cartStorage.push(platStorage)
+  localStorage.setItem('cartTStorage', JSON.stringify(cartStorage))
+
   var cartShopBox = document.createElement('div')
   cartShopBox.classList.add('cart-box')
 
@@ -104,28 +151,28 @@ var addToCart = function (title, img, price, id) {
   for (var i = 0; i < cartBox.length; i++) {
     var cartItemsId = cartBox[i].getElementsByClassName('idPlat')[0].value
     // alert("te")
-    console.log(id)
-    console.log(cartItemsId)
-    if (id == cartItemsId) {
+    // console.log(id)
+    // console.log(cartItemsId)
+    if (Id == cartItemsId) {
       alert(" ------- Vous aver deja choisie ce plat ! ------- \n vous pouver ajouter la quantiter dans votre cart")
       return;
     }
   }
 
   var cartMaker = `
-    <img src="../${img}" alt="hh" class="cart-img">
+    <img src="../${Img}" alt="hh" class="cart-img">
     <div class="detail-box">
-    <div class="cart-product-title">${title}</div>
-    <div class="cart-price">${parseFloat(price)} DH</div>
-    <input type="hidden" class="idPlat" value="${id}">
+    <div class="cart-product-title">$Ttitle}</div>
+    <div class="cart-price">${parseFloat(Price)} DH</div>
+    <input type="hidden" class="idPlat" value="${Id}">
     <input type="number" value="1" class="cart-contity">
     </div>
     <!-- remove cart -->
     <i class="bx bxs-trash-alt cart-remove">re</i>
     `
 
-    cartTmp.push(cartMaker)
-    localStorage.setItem('cartBox',cartTmp)
+  // cartTmp.push(cartMaker)
+  // localStorage.setItem('cartBox',cartTmp)
 
   cartShopBox.innerHTML = cartMaker
   cartItems.append(cartShopBox)
@@ -194,9 +241,10 @@ function uptadeTotale() {
   let cartContent = document.getElementsByClassName('cart-content')[0]
   let cartBoxes = cartContent.getElementsByClassName('cart-box')
 
-  let total = Number(localStorage.getItem('total'))
-  if (!total) total = 0
-  alert(total)
+  // let total = Number(localStorage.getItem('total'))
+  // if (!total) 
+  let total = 0
+  // alert(total)
 
   // console.log(cartBoxes)
 
@@ -208,7 +256,7 @@ function uptadeTotale() {
     let quantity = quantityElement.value
     total += price * quantity
     total = Math.round(total * 100) / 100
-    localStorage.setItem('total', total)
+    // localStorage.setItem('total', total)
 
     //alert(total);
     //true;
@@ -225,5 +273,10 @@ function uptadeTotale() {
     document.getElementsByClassName('totale-price')[0].innerText = total + ' DH'
 
   }
-  alert(total)
+  // alert(total)
+}
+document.querySelector('.btn-buy').onclick = function(){
+  localStorage.clear();
+  location.reload();
+
 }

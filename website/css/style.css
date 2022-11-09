@@ -169,10 +169,10 @@ header.sticky {
 
 .cart-box {
   display: grid;
-  grid-template-columns: 32% 45% 10%;
+  grid-template-columns: 30% 45% 10%;
   align-items: center;
   margin-top: 1rem;
-  gap: 2rem;
+  gap: 5%;
 }
 
 .cart-img {
@@ -180,6 +180,7 @@ header.sticky {
   height: 100px;
   object-fit: contain;
   padding: 10px;
+  /* border: solid #FF3D00; */
 }
 
 .detail-box {
@@ -1059,6 +1060,8 @@ section {
     /* padding: 8px 2%; */
     padding: 1px 5%;
     transition: 0.2s;
+    transition: all 0.38s ease;
+
   }
 }
 
@@ -1084,6 +1087,7 @@ section {
   /* nav-bar */
   #menU {
     display: block;
+    cursor: pointer;
   }
 
   /* #shoP {} */
@@ -1100,6 +1104,7 @@ section {
     background: #f2f2ed;
     align-items: center;
     flex-direction: column;
+    transition: all 0.38s ease;
   }
 
   .stickY {
