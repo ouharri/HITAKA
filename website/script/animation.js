@@ -3,8 +3,6 @@
 const tswira = document.querySelector('#img_amim')
 const styleTswira = tswira.style
 
-
-
 if ( window.scrollY <= 0 ) again() 
 
 function again() {
