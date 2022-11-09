@@ -162,7 +162,7 @@ function addToCart(Title, Img, Price, Id) {
   var cartMaker = `
     <img src="../${Img}" alt="hh" class="cart-img">
     <div class="detail-box">
-    <div class="cart-product-title">${Ttitle}</div>
+    <div class="cart-product-title">${Title}</div>
     <div class="cart-price">${parseFloat(Price)} DH</div>
     <input type="hidden" class="idPlat" value="${Id}">
     <input type="number" value="1" class="cart-contity">
