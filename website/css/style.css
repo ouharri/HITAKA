@@ -106,6 +106,7 @@ header.sticky {
 
 #menU {
   color: #ff3d00;
+  font-size: 45px !important;
   display: none;
 }
 
@@ -113,29 +114,33 @@ header.sticky {
   position: relative;
   color: #ff3d00;
   cursor: pointer;
+  height: 42px;
+  width: 36px;
 }
-.QUantitéCart {
-  position: absolute;
-  right: 12px;
-  top: 17px;
-  height: 12px;
-  width: 12px;
+
+
+
+.QUantitéCart p {
+  padding: 5px;
   text-align: center;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  /* top: 15px; */
+}
+.QUantitéCart {
+  border-radius: 50%;
+  position: relative;
+  left: 13px;
+  bottom: 17px;
+  width: 10px;
+  height: calc(auto+2px);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
   font-size: 9px;
   color: #f2f2ed;
   background-color: #ff3d00;
-  border-radius: 50%;
-  padding: 2px !important; 
-}
-
-.QUantitéCart p {
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  top: 15px;
+  padding-top: 1px;
 }
 .cart {
   position: fixed;
@@ -154,6 +159,7 @@ header.sticky {
   /* padding-bottom: 40px; */
   transition: all 0.38s ease;
 }
+
 .cart-title {
   text-align: center;
   font-size: 1.5rem;
@@ -181,43 +187,52 @@ header.sticky {
   row-gap: 0.5rem;
   margin-right: 5px;
 }
+
 .cart-product-title {
   font-size: 1rem;
   text-transform: uppercase;
 }
+
 .cart-content {
   max-height: 60vh;
   width: 100%;
-  overflow:auto;
+  overflow: auto;
   /* overflow-y: auto; */
 }
+
 .cart-price {
   font-weight: 500;
 }
+
 .cart-contity {
   border: 1px solid red;
   width: 2.4rem;
   text-align: center;
   font-size: 1rem;
 }
+
 .cart-remove {
   font: 24px;
   color: #ff3d00;
   cursor: pointer;
 }
+
 .total {
   display: flex;
   justify-content: flex-end;
   margin-top: 1.5rem;
   border-top: 1px solid black;
 }
+
 .totale-title {
   font-size: 1rem;
   font-size: 600;
 }
+
 .totale-price {
   margin-left: 2rem;
 }
+
 .btn-buy {
   display: flex;
   margin: 1.5rem auto 0 auto;
@@ -234,6 +249,7 @@ header.sticky {
   border-radius: 50px;
   margin-bottom: 50px;
 }
+
 .cart.Active {
   right: 0;
   transition: all 0.38s ease;
@@ -259,7 +275,7 @@ section {
   width: 100%;
   position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
   align-items: center;
   gap: 1rem;
   margin-bottom: 10px;
@@ -267,6 +283,7 @@ section {
 
 .home-img {
   align-items: center;
+  width: 100%;
 }
 
 .home-img img {
@@ -274,6 +291,7 @@ section {
   width: 100%;
   height: auto;
   filter: drop-shadow(1px 3px 50px rgba(83, 71, 71, 0.6));
+  transition: all 0.38s ease;
 }
 
 .home-text h1 {
@@ -304,7 +322,7 @@ section {
   background-color: #ff3d00;
   transition: all 0.38s ease;
   border-radius: 20px;
-  margin-left: 280px;
+  margin-left: 280px; 
   margin-top: 10px;
   border: 5px;
   width: 100px;
@@ -320,25 +338,25 @@ section {
 }
 
 .mainhome {
-  position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
   align-items: center;
-  gap: 8rem;
+  gap: 5rem;
 }
-
-.mainhome h3 {
-  font-weight: 700;
-  font-size: 15px;
-  line-height: 141.5%;
-  color: #000000;
-}
-
 .mainhome h3 span {
   font-weight: 700;
   font-size: 30px;
   line-height: 189%;
   color: #84813b;
+}
+.mainhome h3 {
+  width: 100%;
+  text-align: justify;
+  align-items: center;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 141.5%;
+  color: #000000;
 }
 
 .none {
@@ -346,8 +364,8 @@ section {
 }
 
 .mainhome img {
-  width: 90%;
-  height: 90%;
+  width: 100%;
+  height: 350px;
   opacity: 0.8;
 }
 
@@ -358,10 +376,13 @@ section {
   gap: 3rem;
   justify-items: center;
 }
+.mainimag .imgg{
+  width: 100%;
+}
 
 .mainimag img {
+  width: 100%;
   height: 350px;
-  width: 350px;
   opacity: 0.7;
 }
 
@@ -369,13 +390,13 @@ section {
   margin: 10%;
   position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
   align-items: center;
   gap: 3rem;
 }
 
 .mainToContact .mainToContactImg {
-  width: auto;
+  width: 100%;
   height: auto;
 }
 
@@ -606,12 +627,14 @@ section {
 .foteerPlat .addPlat:hover {
   color: green;
 }
+
 /* spinner css  */
 .lds-dual-ring {
   display: inline-block;
   width: 80px;
   height: 80px;
 }
+
 .lds-dual-ring:after {
   content: " ";
   display: block;
@@ -623,30 +646,131 @@ section {
   border-color: #ff3d00 transparent #ff3d00 transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
+
 @keyframes lds-dual-ring {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
 
+/* ----------------------------------------------------------------------- */
+/*           A propos part         */
+/* ----------------------------------------------------------------------- */
 
-/* contact part */
+.introPropos {
+  margin: 6% 10%;
+  margin-bottom: 0;
+  border-bottom: 3px solid #84813B;
+}
+
+.introPropos h1 {
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 141.5%;
+  color: #FF3D00;
+}
+
+.sushiPropos {
+  margin-top: 0px;
+}
+
+.introPropos img {
+  padding: 3%;
+  width: 100%;
+  height: 70vh;
+}
+
+.mainPropos h2 {
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 141.5%;
+  color: #FF3D00;
+}
+
+.mainPropos{
+  display: flex;
+  flex-direction: column;
+  margin: 6% 10%;
+}
+
+.mainPropos .mainRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  /* gap: 50px; */
+}
+.mainPropos h2{
+  margin: 50px 0;
+}
+
+.mainPropos .mainRow .row1 {
+  background-color: rgba(132, 129, 59, 0.1);
+  width: 100%;
+  height: auto;
+  font-family: 'Poppins';
+  font-style: normal;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 141.5%;
+}
+.mainPropos .mainRow .row1 p{
+  padding: 15px;
+}
+
+.mainPropos .mainRow .row2{
+  width: 100%;
+  height: 100%;
+}
+
+.mainPropos .mainRow .row2 img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ----------------------------------------------------------------------- */
+/*           contact part         */
+/* ----------------------------------------------------------------------- */
 .main {
   width: 100%;
   height: 350px;
-  padding: 90px 0 0;
-  /* margin-top: 16vh; */
+  align-items: center;
+  text-align: center;
+  color: white;
+  /* line-height: 141.5%; */
+  /* letter-spacing: 0.02em; */
+  padding: 10vh;
+  margin: 0;
+  margin-top: 16vh;
+  margin-bottom: 20px;
+  background: linear-gradient(180deg, rgba(255, 61, 0, 0.2) 50%, rgba(0, 0, 0, 0) 100%), url(../img/contact-back.jpg);
+  /* transform: matrix(0, 1, 1, 0, 0, 0); */
+  /* filter: blur(5px); */
+  background-size: cover;
+}
+
+.main h3 {
+  font-weight: 700;
+  font-size: 120px;
+  line-height: 141.5%;
+  letter-spacing: 0.02em;
+  /* filter: drop-shadow(1px 3px 50px rgba(83, 71, 71, 0.6)); */
+  text-shadow: 1px 3px 50px rgba(83, 71, 71, 0.6);
+  /* box-shadow: 3px 5px 10px rgba(193, 168, 168, 0.5); */
 }
 
 .main img {
   width: 100%;
   height: 100%;
   /* image-resolution: 100px; */
-  margin-bottom: 1%;
+  /* margin-bottom: 1%; */
   opacity: 0.8;
+
 }
 
 .intText h2 {
@@ -939,6 +1063,24 @@ section {
 }
 
 @media (max-width: 709px) {
+  svg{
+    width: 80px !important;
+    /* font-size: 0px !important; */
+  }
+
+  p{
+    font-size: 15px !important;
+  }
+  h1{
+    font-size: 40px !important;
+  }
+  h2{
+    font-size: 30px !important;
+  }
+  h3{
+    font-size: 15px !important;
+  }
+  
   /* nav-bar */
   #menU {
     display: block;
@@ -968,14 +1110,42 @@ section {
   .nav-bar a {
     display: block;
     margin: 1.3rem 0;
+    /* font-size: 10px; */
   }
 
   .nav-bar.open {
     right: 0;
   }
+  /* home */
+  .mindec{
+    display: none;
+  }
+  .home-text button {
+    margin-left: 25%; 
+  }
+  .mainhome h3{
+    font-size: 12px;
+  }
+  .mainhome h3 span {
+    font-size: 20px;
+  }
 
+  /* A propos */
+  .introPropos {
+    margin-top: 60px;
+  }
+  .sushiPropos {
+    margin-top: 0px;
+  }
+  .introPropos img {
+    padding: 3%;
+    width: 100%;
+    height: auto;
+  }
   /* contact */
-
+  .main h3{
+    font-size: 60px;
+  }
   .line {
     flex-direction: column;
   }
@@ -983,6 +1153,7 @@ section {
   .input-box {
     width: 100%;
   }
+
   .cart {
     width: 100%;
   }
