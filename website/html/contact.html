@@ -112,28 +112,28 @@
       <div class="line">
         <div class="input-box">
           <label for="name">First Name</label>
-          <input name="name" type="name" placeholder="  what's your name">
+          <input name="name" type="name" placeholder="  what's your name" required pattern="[a-z]*" >
         </div>
         <div class="input-box">
           <label for="sname">Last Name</label>
-          <input name="sname" type="name" placeholder="  your last name ?">
+          <input name="sname" type="name" placeholder="  your last name ?" required pattern="[a-z]*" >
         </div>
       </div>
       <br>
       <div class="line">
         <div class="input-box">
           <label for="mail">Email*</label>
-          <input name="mail" type="mail" placeholder="  give me your mail">
+          <input name="mail" type="email" placeholder="  give me your mail" required>
         </div>
         <div class="input-box">
           <label for="phone">Phone</label>
-          <input name="phone" type="tel" placeholder="  your phone ?">
+          <input name="phone" type="tel" placeholder="  your phone ?" pattern="[0-9]*" required>
         </div>
       </div>
       <br>
       <div class="input-box msg">
         <label for="msg">Message*</label>
-        <textarea name="msg" id="" cols="30" rows="4"></textarea>
+        <textarea name="msg" id="" cols="30" rows="4" required></textarea>
       </div>
 
       <div class="submitbtn">

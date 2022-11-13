@@ -21,7 +21,6 @@ header {
   display: flex !important;
   position: fixed;
   width: 100%;
-  /* height: 64px; */
   height: auto;
   top: 0;
   right: 0;
@@ -41,7 +40,6 @@ header.sticky {
 .logo {
   width: 100px;
   height: 60px;
-  /* margin-top: 3px; */
 }
 
 .nav-bar {
@@ -59,7 +57,6 @@ header.sticky {
 .BarRight {
   display: flex;
   align-items: center !important;
-  /* justify-content: center; */
 }
 
 .nav-bar a {
@@ -125,8 +122,8 @@ header.sticky {
   text-align: center;
   justify-content: center;
   align-items: center;
-  /* top: 15px; */
 }
+
 .QUantitéCart {
   border-radius: 50%;
   position: relative;
@@ -142,21 +139,19 @@ header.sticky {
   background-color: #ff3d00;
   padding-top: 1px;
 }
+
 .cart {
   position: fixed;
   top: 0;
   right: -100%;
   width: 50%;
-  /* min-width: 100vh; */
   min-height: 100vh;
   padding: 40px 40px;
-  /* display: flex; */
   background: #f2f2ed;
   align-items: center;
   flex-direction: column;
   box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
   z-index: 1000;
-  /* padding-bottom: 40px; */
   transition: all 0.38s ease;
 }
 
@@ -180,7 +175,6 @@ header.sticky {
   height: 100px;
   object-fit: contain;
   padding: 10px;
-  /* border: solid #FF3D00; */
 }
 
 .detail-box {
@@ -198,7 +192,6 @@ header.sticky {
   max-height: 60vh;
   width: 100%;
   overflow: auto;
-  /* overflow-y: auto; */
 }
 
 .cart-price {
@@ -272,7 +265,6 @@ section {
 }
 
 .home {
-  /* height: 88vh; */
   width: 100%;
   position: relative;
   display: grid;
@@ -311,7 +303,6 @@ section {
   font-size: 16px;
   line-height: 35px;
   color: #84813b;
-  /* margin-left: 40px; */
 }
 
 .mindec {
@@ -323,7 +314,7 @@ section {
   background-color: #ff3d00;
   transition: all 0.38s ease;
   border-radius: 20px;
-  margin-left: 280px; 
+  margin-left: 280px;
   margin-top: 10px;
   border: 5px;
   width: 100px;
@@ -344,12 +335,14 @@ section {
   align-items: center;
   gap: 5rem;
 }
+
 .mainhome h3 span {
   font-weight: 700;
   font-size: 30px;
   line-height: 189%;
   color: #84813b;
 }
+
 .mainhome h3 {
   width: 100%;
   text-align: justify;
@@ -377,7 +370,8 @@ section {
   gap: 3rem;
   justify-items: center;
 }
-.mainimag .imgg{
+
+.mainimag .imgg {
   width: 100%;
 }
 
@@ -453,7 +447,6 @@ section {
 .block {
   width: 100%;
   height: 100%;
-  /* position:fixed;  */
 }
 
 .seach {
@@ -531,6 +524,11 @@ section {
   display: flex;
   margin-top: -120px;
   justify-content: end;
+  transition: all 0.38s ease;
+}
+
+.tbsil img {
+  transition: all 0.38s ease;
 }
 
 .landing img {
@@ -631,6 +629,7 @@ section {
 
 /* spinner css  */
 .lds-dual-ring {
+  transition: all 0.50s ease;
   display: inline-block;
   width: 80px;
   height: 80px;
@@ -692,7 +691,7 @@ section {
   color: #FF3D00;
 }
 
-.mainPropos{
+.mainPropos {
   display: flex;
   flex-direction: column;
   margin: 6% 10%;
@@ -703,7 +702,8 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(300px, auto));
   /* gap: 50px; */
 }
-.mainPropos h2{
+
+.mainPropos h2 {
   margin: 50px 0;
 }
 
@@ -720,11 +720,12 @@ section {
   font-size: 25px;
   line-height: 141.5%;
 }
-.mainPropos .mainRow .row1 p{
+
+.mainPropos .mainRow .row1 p {
   padding: 15px;
 }
 
-.mainPropos .mainRow .row2{
+.mainPropos .mainRow .row2 {
   width: 100%;
   height: 100%;
 }
@@ -745,7 +746,7 @@ section {
   color: white;
   /* line-height: 141.5%; */
   /* letter-spacing: 0.02em; */
-  padding: 10vh;
+  /* padding: 5%; */
   margin: 0;
   margin-top: 16vh;
   margin-bottom: 20px;
@@ -756,6 +757,7 @@ section {
 }
 
 .main h3 {
+  padding-top: 7%;
   font-weight: 700;
   font-size: 120px;
   line-height: 141.5%;
@@ -870,6 +872,32 @@ section {
   height: 5%;
 }
 
+
+textarea:empty,
+input:empty {
+  border: 1px solid #cccccc;
+}
+
+textarea:invalid,
+input:invalid {
+  border: 0.1px solid #fdab92;
+  animation: shake .3s;
+}
+
+@keyframes shake {
+  25% {
+    transform: translateX(4px)
+  }
+
+  50% {
+    transform: translateX(-4px)
+  }
+
+  75% {
+    transform: translateX(4px)
+  }
+}
+
 .submitbtn input[type="submit"]:hover,
 .btn-buy:hover {
   color: #151d53;
@@ -904,32 +932,6 @@ section {
   filter: drop-shadow(0px 1px 10px rgba(0, 0, 0, 0.3));
 }
 
-/* .main img{
-  width: 100%;
-  height: 50vh;
-  filter: blur(1px);
-}
-.main h1 {
-  z-index: 1000;
-  text-decoration:none;
-  filter:  drop-shadow(16px 16px 20px red);
-  color: white;
-  width: 100%;
-  height: auto;
-  margin-left: 35.5%;
-  margin-top: -36vh;
-  font-family: 'Comfortaa';
-  font-style: normal;
-  font-weight: 700;
-  font-size:80px;
-  line-height: 141.5%;
-  letter-spacing: 0.02em;
-}
-.main a:hover{
-  text-decoration:none;
-  filter:  none;
-  color: white;
-} */
 /* footer section */
 .mainFooter {
   padding: 5%;
@@ -1009,11 +1011,7 @@ section {
   opacity: 0.7;
 }
 
-/* .shoop-cart{
-  position: fixed;
-  top: 5rem;
-  right: 3rem;
-} */
+
 .sctrooL {
   position: fixed;
   bottom: 1.5rem;
@@ -1031,13 +1029,6 @@ section {
   opacity: 1;
 }
 
-/* .Ser{
-  width: 80%;
-  border-top:1px solid #ff3d00;
-}
-.Con{
-  
-} */
 
 @media (max-width: 1690px) {
   section {
@@ -1065,25 +1056,38 @@ section {
   }
 }
 
+@media (max-width: 900px){
+  .main{
+    padding-top: 5%;
+  }
+  .main h3{
+    font-size: 80px !important;
+  }
+}
+
+
 @media (max-width: 709px) {
-  svg{
+  svg {
     width: 80px !important;
     /* font-size: 0px !important; */
   }
 
-  p{
+  p {
     font-size: 15px !important;
   }
-  h1{
+
+  h1 {
     font-size: 40px !important;
   }
-  h2{
+
+  h2 {
     font-size: 30px !important;
   }
-  h3{
+
+  h3 {
     font-size: 15px !important;
   }
-  
+
   /* nav-bar */
   #menU {
     display: block;
@@ -1121,16 +1125,20 @@ section {
   .nav-bar.open {
     right: 0;
   }
+
   /* home */
-  .mindec{
+  .mindec {
     display: none;
   }
+
   .home-text button {
-    margin-left: 25%; 
+    margin-left: 25%;
   }
-  .mainhome h3{
+
+  .mainhome h3 {
     font-size: 12px;
   }
+
   .mainhome h3 span {
     font-size: 20px;
   }
@@ -1139,18 +1147,26 @@ section {
   .introPropos {
     margin-top: 60px;
   }
+
   .sushiPropos {
     margin-top: 0px;
   }
+
   .introPropos img {
     padding: 3%;
     width: 100%;
     height: auto;
   }
+
   /* contact */
-  .main h3{
-    font-size: 60px;
+  .main {
+    padding: 18%;
   }
+
+  .main h3 {
+    font-size: 60px !important;
+  }
+
   .line {
     flex-direction: column;
   }
@@ -1162,4 +1178,5 @@ section {
   .cart {
     width: 100%;
   }
+
 }

@@ -1,9 +1,9 @@
-
 const filter = document.getElementById('filter').value;
 const plat = document.getElementById('plat')
 const list = document.getElementById("platType");
 
 
+// console.log(data)
 const platType = function (type, descr) {
     return `
     <h2>${type}</h2>
@@ -15,7 +15,7 @@ const Content = function (plat) {
     Img = plat.img,
     Id = plat.id;
     return `
-    <div class="roW">
+    <div class="roW" id="${plat.id}">
     <img src="../${plat.img}" alt="">
     <div class="menu-text">
     <div class="menu-left">
@@ -38,24 +38,21 @@ const Content = function (plat) {
     <a href=""><i class='bx bxs-star'></i></a>
     </div>
     <div class="addPlat" onclick="addToCart(${"'" + Title + "','" + Img + "'," + Price + "," + Id})">
-    <i class='bx bx-plus-circle bx-sm add-cart'></i>
+    <i class='bx bx-plus-circle bx-sm add-cart'>.</i>
     </div>
     </div>
     </div>
     </div>`
 }
-// //     const data = require('data.json');
-// // console.log(data)
-// // fetch('./data.json')
-// //     .then((response) => response.json())
-// //     .then((json) => console.log(json));
-// // console.log(data);
-
-// // import data from './data.json' assert { type: 'JSON' };
-// // console.log(data);
+// import data from './test';
+// fetch('./data.json')
+//     .then((response) => response.json())
+//     .then((json) => console.log(json));
+// console.log(data);
+// import data from './data.json' assert { type: 'JSON' };
+// console.log(data);
 // import data from './data.json' assert { type: 'json' };
-// // console.log(data);
-
+// console.log(data);
 // const soupPlat = data[0];
 // const NemsPlat = data[1];
 // const TempuraPlat = data[2];
@@ -534,7 +531,7 @@ var DesertPlat = [
         id: 64,
     },
 ]
-// 
+
 
 if (filter == "all") {
     
@@ -558,12 +555,17 @@ if (filter == "all") {
     for (let i = 0; i < DesertPlat.length; i++) plat.innerHTML += Content(DesertPlat[i]);
 }
 
-handlChange = (e) => {
+handlChange = () => {
     // alert("5dama")
-    // location.reload();
     const filter = document.getElementById('filter').value;
 
+    setTimeout(() => {
+        document.getElementById('spineer').style.display = "none"
+        // spinner.classList.toggle("none")
+    }, 1000);
+
     switch (filter) {
+
         case "ALL":
 
             while (list.hasChildNodes()) {
@@ -588,10 +590,7 @@ handlChange = (e) => {
             break;
 
         case "SOUPES":
-            // setTimeout(() => {
-            //     spinner.classList.toggle("none")
-            // }, 1000);
-
+            
             while (list.hasChildNodes()) {
                 list.removeChild(list.firstChild);
             }
