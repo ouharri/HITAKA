@@ -155,15 +155,6 @@ function quantityChanged(event) {
 
   uptadeTotale()
 }
-// function addCartClicked(event) {
-//   // alert('gg')
-
-//   var button = event.target
-//   var shopProducts = button.parentElement
-//   // var title = shopProducts.getElementById('produitName')
-//   uptadeTotale()
-//   // console.log(title.value)
-// }
 
 function addToCart(Title, Img, Price, Id) {
 
@@ -172,13 +163,9 @@ function addToCart(Title, Img, Price, Id) {
 
   var cartItems = document.getElementsByClassName('cart-content')[0]
   var cartBox = cartItems.getElementsByClassName('cart-box')
-  // console.log(cartBox)
 
   for (var i = 0; i < cartBox.length; i++) {
     var cartItemsId = cartBox[i].getElementsByClassName('idPlat')[0].value
-    // alert("te")
-    // console.log(id)
-    // console.log(cartItemsId)
     if (Id == cartItemsId) {
       alert(" ------- Vous aver deja choisie ce plat ! ------- \n vous pouver ajouter la quantiter dans votre cart")
       return;
@@ -222,9 +209,6 @@ function uptadeTotale() {
   let cartBoxes = cartContent.getElementsByClassName('cart-box')
 
   var total = 0;
-  // alert(total)
-
-  // console.log(cartBoxes)
 
   for (let i = 0; i < cartBoxes.length; i++) {
     let cartBox = cartBoxes[i]
