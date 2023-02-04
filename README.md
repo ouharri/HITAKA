@@ -1,3 +1,6 @@
+# HITAKA
+
+
 Context of the project
 
 Your client Hitaka is a Japanese Asian restaurant specializing in Sushi, he wants to strengthen his presence on the market by introducing his new website.
