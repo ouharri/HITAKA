@@ -45,6 +45,7 @@ A Confirm order button to calculate the sum of the prices of the selected choice
 About Page (Contains detailed information about the restaurant and its history).
 
 Contact page (Contains a form that takes [surname, first name, phone number, email, message] and displays a confirmation message with the details filled in).
+
 ![img_2.png](website/img/img_2.png)
 ​
 
