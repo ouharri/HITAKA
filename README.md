@@ -1,15 +1,21 @@
 # HITAKA
+![img.png](website/img/img.png)
 
 
 Context of the project
 
 Your client Hitaka is a Japanese Asian restaurant specializing in Sushi, he wants to strengthen his presence on the market by introducing his new website.
 
+![img_3.png](website/img/img_3.png)
+
 For this the product owner (Trainer) has chosen you to carry out this project, you must design a model of the site. For a first return to the product owner (Trainer), while introducing your skills as a web designer so that you can use the UI/UX concepts for his website.
+
+![img_4.png](website/img/img_4.png)
 
 Then the implementation of this model in a website in HTML5, CSS 3 and Javascript, you are led to perform the following tasks:
 
 ​
+![img_1.png](website/img/img_1.png)
 
 Modeling part:
 
@@ -39,7 +45,7 @@ A Confirm order button to calculate the sum of the prices of the selected choice
 About Page (Contains detailed information about the restaurant and its history).
 
 Contact page (Contains a form that takes [surname, first name, phone number, email, message] and displays a confirmation message with the details filled in).
-
+![img_2.png](website/img/img_2.png)
 ​
 
 BONUS:
